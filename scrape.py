@@ -4,7 +4,7 @@ import json
 
 # Define the URL with the desired query parameters
 base_url = 'http://export.arxiv.org/api/query?'
-search_query = 'cat:cs.AI'  # Specify the taxonomy/category here, cs.AI for Artificial Intelligence
+search_query = 'cat:cs.CL'  # Specify the taxonomy/category here, cs.AI for Artificial Intelligence
 start = 0  # Start index for results
 max_results = 10000  # Maximum number of results to retrieve
 
