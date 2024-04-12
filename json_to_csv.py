@@ -1,8 +1,10 @@
 import json
 import csv
+import sys
 
+file_name = sys.argv[1]
 # load json file and data
-with open('arxiv_results.json') as json_file:
+with open(file_name) as json_file:
     data = json.load(json_file)
 
 # start csv writing
