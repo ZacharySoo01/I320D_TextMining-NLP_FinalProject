@@ -1,8 +1,13 @@
 scrape:
 	rm arxiv_results.json
 	rm arxiv_results.csv
-	echo scraping arXiv ...
 	python scrape.py
-	echo converting json to csv ...
-	python json_to_csv.py arxiv_results.json
-	echo scraping process completed!
+	python json_to_csv.py arxiv_results
+	
+
+scrape-test:
+	rm test_data.json
+	rm test_data.csv
+	python scrape_small.py
+	python json_to_csv.py test_data
+	
