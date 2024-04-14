@@ -16,12 +16,16 @@ first_iter = True
 for entry in data:
     # extract headers on first iteration only
     if first_iter:
-        csv_writer.writerow(entry.keys())
+        csv_writer.writerow(['id', 'title', 'summary'])
         first_iter = False
 
     # write values to csv rows
     title = entry['title'].replace('\n', ' ').strip('"').strip(' ')
     summary = entry['summary'].replace('\n', ' ').strip('"').strip(' ')
-    csv_writer.writerow([title, summary])
+    if 'id' in entry:
+        id = entry['id']
+        csv_writer.writerow([id, title, summary])
+    else:
+        csv_writer.writerow([title, summary])
 
 csv_file.close()

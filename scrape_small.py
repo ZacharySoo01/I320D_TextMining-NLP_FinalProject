@@ -21,6 +21,8 @@ with urllib.request.urlopen(url) as response:
 # Parse the XML response
 root = ET.fromstring(data)
 
+row_num = 0
+
 # Iterate through each entry in the XML response
 for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
     entry_dict = {}
@@ -29,6 +31,8 @@ for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
             entry_dict['title'] = elem.text
         elif elem.tag.endswith('summary'):
             entry_dict['summary'] = elem.text
+    entry_dict['id'] = row_num
+    row_num += 1
     results.append(entry_dict)
 
 # Output the results to a JSON file
