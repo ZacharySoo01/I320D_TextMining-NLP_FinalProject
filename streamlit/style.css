@@ -1,0 +1,13 @@
+body {
+    color: #fff;
+    background-color: #4F8BF9;
+}
+
+.btn_search{
+    border: none;
+
+}
+
+.stTextInput>div>div>input {
+    color: #4F8BF9;
+}
